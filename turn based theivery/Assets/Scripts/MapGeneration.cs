@@ -50,9 +50,27 @@ public class MapGeneration : MonoBehaviour
         while (Counter < TotalTiles)
         {
             //this generates a random number that fits the length of my useable tile list so that i can grab a random tile
-            TileNum = Random.Range(0, 7);
+            TileNum = Random.Range(0, 8);
             SelectedTile = BaseTileList[TileNum];
-            RandomRotation = Random.Range(1, 20);
+            RandomRotation = Random.Range(1, 4);
+
+            //this assigns a rotation to rotation
+            if (RandomRotation == 1)
+            {
+                Rotation = new Quaternion(0, 0, 0, 0); 
+            }
+            else if (RandomRotation == 2)
+            {
+                Rotation = new Quaternion(0, 0, 90, 0);
+            }
+            else if (RandomRotation == 3)
+            {
+                Rotation = new Quaternion(0, 0, 180, 0);
+            }
+            else if (RandomRotation == 4)
+            {
+                Rotation = new Quaternion(0, 0, 270, 0);
+            }
 
             // if the current tile being put down is the first tile it will always be start tile
             if (Counter == 0)
@@ -219,24 +237,6 @@ public class MapGeneration : MonoBehaviour
                     TileLocation = TileLocation + new Vector3(0, -12, 0);//places the next tile above the previous
                 }
             }
-        }
-
-        //this assigns a rotation to rotation
-        if (RandomRotation <= 5)
-        {
-            Rotation = new Quaternion(0, 0, 0, 0);
-        }
-        else if (RandomRotation <= 10)
-        {
-            Rotation = new Quaternion(0, 0, 90, 0);
-        }
-        else if (RandomRotation <= 15)
-        {
-            Rotation = new Quaternion(0, 0, 180, 0);
-        }
-        else if (RandomRotation <= 20)
-        {
-            Rotation = new Quaternion(0, 0, 270, 0);
         }
     }
 }

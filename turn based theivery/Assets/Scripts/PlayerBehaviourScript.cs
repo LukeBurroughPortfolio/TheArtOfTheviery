@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerBehaviourScript : MonoBehaviour
 {
+    public int ArtStolen = 0;
+
     //refrences to all the feelers on the player to check if there is a wall in that direction
     public GameObject TopCol;
     public GameObject BotCol;
@@ -11,15 +13,20 @@ public class PlayerBehaviourScript : MonoBehaviour
     public GameObject RightCol;
 
     //this tells us if anyof the feelers are colliding with anything FASLE = not colliding
-    bool TopColBool = false;
-    bool BotColBool = false;
-    bool LeftColBool = false;
-    bool RightColBool = false;
+    public bool TopColBool = false;
+    public bool BotColBool = false;
+    public bool LeftColBool = false;
+    public bool RightColBool = false;
 
     //this starts the repeting method that allows movement
     void Start()
     {
         InvokeRepeating("Move", 0.1f, 0.1f);
+    }
+
+    public void AddArtToStolen()
+    {
+        ArtStolen++;
     }
 
     void Move()

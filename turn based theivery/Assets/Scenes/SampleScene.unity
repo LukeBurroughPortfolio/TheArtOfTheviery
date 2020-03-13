@@ -121,6 +121,84 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &818530573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818530576}
+  - component: {fileID: 818530575}
+  - component: {fileID: 818530574}
+  m_Layer: 0
+  m_Name: ScriptManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &818530574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818530573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0122475b68a8e45a3137ca44e6587d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalPaintingsInLevel: 7
+--- !u!114 &818530575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818530573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056f2abf10cdba04eab4b904d356bb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelNum: 1
+  BaseRoomCount: 5
+  StartTile: {fileID: 6849624894629821764, guid: 1bcb662367c5ddd4881e15adf565245a,
+    type: 3}
+  TileRef01: {fileID: 6849624894629821764, guid: 13d366ba8f09e054da0b932105152765,
+    type: 3}
+  TileRef02: {fileID: 6849624894629821764, guid: e2cc6a92b20a5a84e9b222308b432e7e,
+    type: 3}
+  TileRef03: {fileID: 6849624894629821764, guid: 1d0607350156fde4ea3cbd94d2f6efab,
+    type: 3}
+  TileRef04: {fileID: 6849624894629821764, guid: fc65d4a440ad834498f053f00bbae4bd,
+    type: 3}
+  TileRef05: {fileID: 6849624894629821764, guid: 1af9815a99cfec447a336b83395e6c62,
+    type: 3}
+  TileRef06: {fileID: 6849624894629821764, guid: 841a73b2a0f351240ac17983f299f312,
+    type: 3}
+  TileRef07: {fileID: 6849624894629821764, guid: db3cc8224c8547f47940b6f5cd5d90a3,
+    type: 3}
+  TileRef08: {fileID: 6849624894629821764, guid: 5a8b46a62b2829947b5b0436f98439c9,
+    type: 3}
+  EndTile: {fileID: 6849624894629821764, guid: b7fd9110ab39fe54b8a3f395bb5b9759, type: 3}
+--- !u!4 &818530576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818530573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876189313
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 876189316}
   - component: {fileID: 876189315}
-  - component: {fileID: 876189314}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -139,14 +216,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &876189314
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876189313}
-  m_Enabled: 1
 --- !u!20 &876189315
 Camera:
   m_ObjectHideFlags: 0
@@ -202,82 +271,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1888117295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1888117297}
-  - component: {fileID: 1888117296}
-  - component: {fileID: 1888117298}
-  m_Layer: 0
-  m_Name: ScriptManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1888117296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888117295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 056f2abf10cdba04eab4b904d356bb75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelNum: 2
-  BaseRoomCount: 5
-  StartTile: {fileID: 6849624894629821764, guid: 1bcb662367c5ddd4881e15adf565245a,
-    type: 3}
-  TileRef01: {fileID: 6849624894629821764, guid: 26333af5b9876384fb7fcea0d10d9978,
-    type: 3}
-  TileRef02: {fileID: 6849624894629821764, guid: 9df0c58eff0fe6845be3034c36c6a099,
-    type: 3}
-  TileRef03: {fileID: 6849624894629821764, guid: 3688f5febc48b6744814304d90dc5ede,
-    type: 3}
-  TileRef04: {fileID: 6849624894629821764, guid: fefb82963e62001418cebef0e4e90d0b,
-    type: 3}
-  TileRef05: {fileID: 6849624894629821764, guid: cc93f741e7655ef47ac91ee25a48ac66,
-    type: 3}
-  TileRef06: {fileID: 6849624894629821764, guid: fb56e3307594c6d49b2f761d1d8b35d3,
-    type: 3}
-  TileRef07: {fileID: 6849624894629821764, guid: 96e1f0c853fdd6f47a52bdad3445afaa,
-    type: 3}
-  TileRef08: {fileID: 6849624894629821764, guid: 1dca0a55e37fb434c9d40065844c4ca1,
-    type: 3}
-  EndTile: {fileID: 6849624894629821764, guid: c2da0490ee3fdb747ab8f638d4e80bab, type: 3}
---- !u!4 &1888117297
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888117295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1888117298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888117295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0122475b68a8e45a3137ca44e6587d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
