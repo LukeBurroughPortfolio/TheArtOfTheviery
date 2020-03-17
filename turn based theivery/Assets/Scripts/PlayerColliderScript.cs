@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this is attached to the feelers on the player to see if they can still move
 public class PlayerColliderScript : MonoBehaviour
 {
     public bool HitSomething = false;

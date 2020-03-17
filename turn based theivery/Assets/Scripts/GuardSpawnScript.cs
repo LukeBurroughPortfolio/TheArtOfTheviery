@@ -19,7 +19,7 @@ public class GuardSpawnScript : MonoBehaviour
     {
         GuardSpawnChance = Random.Range(1, 100);
         GuardLocation = transform.position;
-        if (GuardSpawnChance <= 30)
+        if (GuardSpawnChance <= 45)
         {
             Instantiate(Guard, GuardLocation, Quaternion.identity);
         }

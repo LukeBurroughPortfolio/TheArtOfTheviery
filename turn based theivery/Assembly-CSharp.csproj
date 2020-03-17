@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ArtBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\GuardBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\GuardFeelerScript.cs" />
      <Compile Include="Assets\Scripts\GuardSpawnScript.cs" />
      <Compile Include="Assets\Scripts\LevelSetUpScript.cs" />
      <Compile Include="Assets\Scripts\MapGeneration.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\PlayerBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\PlayerColliderScript.cs" />
      <Compile Include="Assets\Scripts\RemoveWallScript.cs" />
+     <Compile Include="Assets\Scripts\TurnManagementScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/user/Documents/GitHub/TheArtOfTheviery/turn based theivery/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
