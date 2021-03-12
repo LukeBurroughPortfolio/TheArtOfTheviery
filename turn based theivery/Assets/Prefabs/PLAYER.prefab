@@ -173,10 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArtStolen: 0
-  GuardRef: {fileID: 2640359250573347330, guid: 502d179736b17ca49bfb4655b09c4a29,
-    type: 3}
-  TotalMoves: 3
-  CurrentMovesTaken: 0
   TopCol: {fileID: 6450460778864968235}
   BotCol: {fileID: 2660911693845992560}
   LeftCol: {fileID: 5751727662011430901}

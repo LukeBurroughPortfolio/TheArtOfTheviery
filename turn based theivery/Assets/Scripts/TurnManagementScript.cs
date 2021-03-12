@@ -12,6 +12,8 @@ public class TurnManagementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GuardRef.GetComponent<GuardBehaviourScript>().ResetGuardTurn();
         
+        playerRef.GetComponent<PlayerBehaviourScript>().ResetTurnCounter();
     }
 }

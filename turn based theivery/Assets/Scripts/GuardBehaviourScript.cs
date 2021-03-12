@@ -5,8 +5,8 @@ using UnityEngine;
 public class GuardBehaviourScript : MonoBehaviour
 {
     //these are used to handle if it is the players turn or the guards turn
-    public int TotalMoves;
-    public int CurrentMovesTaken;
+    public int TotalMoves = 30;
+    public int CurrentMovesTaken = 0;
 
     //this will hold the current location of the player
     Vector2 PlayerLocation;
@@ -33,63 +33,128 @@ public class GuardBehaviourScript : MonoBehaviour
     bool RightBool = false;
     bool LeftBool = false;
 
+    public void ResetGuardTurn()
+    {
+        Debug.Log("Guard moves taken = " + CurrentMovesTaken);
+    }
+
     void Start()
     {
         playerList = GameObject.FindGameObjectsWithTag("Player");
         PlayerRef = playerList[0];
-        TotalMoves = 2;
-        CurrentMovesTaken = TotalMoves;
         InvokeRepeating("Patrol", 0.1f, 0.4f);
     }
 
     void Update()
     {
         LookForPlayer();
-    }
-
-    public void ResetTurn()
-    {
-        CurrentMovesTaken = 0;
+        TopBool = TopCol.GetComponent<GuardFeelerScript>().HitSomething;
+        BotBool = BotCol.GetComponent<GuardFeelerScript>().HitSomething;
+        RightBool = RightCol.GetComponent<GuardFeelerScript>().HitSomething;
+        LeftBool = LeftCol.GetComponent<GuardFeelerScript>().HitSomething;
     }
 
     void Patrol()
     {
-        if (CurrentMovesTaken != TotalMoves)
+        MoveNumber = Random.Range(1, 5);
+        if (MoveNumber == 1)
         {
-            CurrentMovesTaken++;
-            TopBool = TopCol.GetComponent<GuardFeelerScript>().HitSomething;
-            BotBool = BotCol.GetComponent<GuardFeelerScript>().HitSomething;
-            RightBool = RightCol.GetComponent<GuardFeelerScript>().HitSomething;
-            LeftBool = LeftCol.GetComponent<GuardFeelerScript>().HitSomething;
-            MoveNumber = Random.Range(1, 5);
-            if (MoveNumber == 1 && RightBool == false)
+            // checks to see if there is space for the player to move
+            if (RightBool == false)
             {
                 //move one square to the right
                 transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0.6f, 0, 0);
             }
-
-            else if (MoveNumber == 2 && BotBool == false)
-            {
-                //move one square down
-                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, -0.6f, 0);
-            }
-
-            else if (MoveNumber == 3 && LeftBool == false)
+            else if (RightBool == true && LeftBool == false)
             {
                 //move one square to the left
                 transform.position = gameObject.GetComponent<Transform>().position + new Vector3(-0.6f, 0, 0);
             }
-
-            else if (MoveNumber == 4 && TopBool == false)
+            else if (RightBool == true && TopBool == false)
             {
-                 //move one square up
-                 transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, 0.6f, 0);
+                //move one square up
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, 0.6f, 0);
+            }
+            else if (RightBool == true && BotBool == false)
+            {
+                //move one square down
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, -0.6f, 0);
             }
         }
 
-        else
+        else if (MoveNumber == 2)
         {
-            PlayerRef.GetComponent<PlayerBehaviourScript>().ResetTurn();
+            // checks to see if there is space for the player to move
+            if (BotBool == false)
+            {
+                //move one square down
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, -0.6f, 0);
+            }
+            else if (BotBool == true && TopBool == false)
+            {
+                //move one square up
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, 0.6f, 0);
+            }
+            else if (BotBool == true && LeftBool == false)
+            {
+                //move one square to the left
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(-0.6f, 0, 0);
+            }
+            else if (BotBool == true && RightBool == false)
+            {
+                //move one square to the right
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0.6f, 0, 0);
+            }
+        }
+
+        else if (MoveNumber == 3)
+        {
+            // checks to see if there is space for the player to move
+            if (LeftBool == false)
+            {
+                //move one square to the left
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(-0.6f, 0, 0);
+            }
+            else if (LeftBool == true && RightBool == false)
+            {
+                //move one square to the right
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0.6f, 0, 0);
+            }
+            else if (LeftBool == true && TopBool == false)
+            {
+                //move one square up
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, 0.6f, 0);
+            }
+            else if (LeftBool == true && BotBool == false)
+            {
+                //move one square down
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, -0.6f, 0);
+            }
+        }
+
+        else if (MoveNumber == 4)
+        {
+            // checks to see if there is space for the player to move
+            if (TopBool == false)
+            {
+                //move one square up
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0, 0.6f, 0);
+            }
+            else if (TopBool == true && BotBool == false)
+            {
+                //move one square to the right
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0.6f, 0, 0);
+            }
+            else if (TopBool == true && RightBool == false)
+            {
+                //move one square to the right
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(0.6f, 0, 0);
+            }
+            else if (TopBool == true && LeftBool == false)
+            {
+                //move one square to the left
+                transform.position = gameObject.GetComponent<Transform>().position + new Vector3(-0.6f, 0, 0);
+            }
         }
     }
 
@@ -102,7 +167,6 @@ public class GuardBehaviourScript : MonoBehaviour
         {
             bool HasSeenPlayer = true;
             bool CurrentlySeePlayer = true;
-            TotalMoves = 5;
             Debug.DrawRay(transform.position, playerDirection, Color.red);
         }
         else if (HasSeenPlayer == true && hit.collider.name != "PLAYER")
